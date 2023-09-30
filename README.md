@@ -34,6 +34,14 @@ Follow these steps to get started:
 
 4. Access your services through the Traefik reverse proxy, exposed at `http://localhost:8080`.
 
+## Building
+
+If you want to rebuild the server, use the Docker Compose command with build flag as follows:
+
+```shell
+docker compose up --build
+```
+
 ## Configuration
 
 ### Traefik Configuration
@@ -43,11 +51,3 @@ The Traefik configuration is defined in the `traefik.yaml` & `config.yaml` file 
 ### Service Configuration
 
 Service-specific configurations are defined in the `compose.yaml` file. Each service should have its own Docker Compose service definition and can be associated with Traefik labels for routing and load balancing. Refer to the Traefik documentation for details on configuring services with labels.
-
-## Building
-
-If you want to rebuild the server, use the compose command with build flag as follows:
-
-```shell
-docker compose up --build
-```
