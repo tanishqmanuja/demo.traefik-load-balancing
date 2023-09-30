@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun dist/index.js",
+    "dev": "bun --hot src/index.ts",
+    "build": "bun build --target=bun ./src/index.ts --minify  --outfile=dist/index.js"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "elysia": "^0.7.15"
+  }
+}

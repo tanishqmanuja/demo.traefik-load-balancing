@@ -1,0 +1,36 @@
+x-server: &server
+  image: bun-server:latest
+  pull_policy: never
+
+services:
+  server-delhi-alpha:
+    <<: *server
+    build: ./server # build once
+    environment:
+      LOCATION: DEL
+      INSTANCE_ID: alpha
+
+  server-delhi-bravo:
+    <<: *server
+    environment:
+      LOCATION: DEL
+      INSTANCE_ID: bravo
+
+  server-bombay-alpha:
+    <<: *server
+    environment:
+      LOCATION: BOM
+      INSTANCE_ID: alpha
+
+  server-bombay-bravo:
+    <<: *server
+    environment:
+      LOCATION: BOM
+      INSTANCE_ID: bravo
+
+  traefik:
+    image: traefik
+    ports:
+      - 8080:80
+    volumes:
+      - ./config/traefik:/etc/traefik

@@ -1,0 +1,36 @@
+http:
+  routers:
+    delhi:
+      entryPoints:
+        - web
+      rule: PathPrefix(`/`) && Headers(`X-FOR-LOCATION`, `DEL`)
+      service: delhi
+    bombay:
+      entryPoints:
+        - web
+      rule: PathPrefix(`/`) && Headers(`X-FOR-LOCATION`, `BOM`)
+      service: bombay
+    all:
+      entryPoints:
+        - web
+      rule: PathPrefix(`/`)
+      service: all
+
+  services:
+    delhi:
+      loadbalancer:
+        servers:
+          - url: http://server-delhi-alpha:8080
+          - url: http://server-delhi-bravo:8080
+    bombay:
+      loadbalancer:
+        servers:
+          - url: http://server-bombay-alpha:8080
+          - url: http://server-bombay-bravo:8080
+    all:
+      weighted:
+        services:
+          - name: delhi
+            weight: 1
+          - name: bombay
+            weight: 1
