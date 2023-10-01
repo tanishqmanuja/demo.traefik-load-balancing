@@ -6,7 +6,7 @@ COPY package.json bun.lockb ./
 RUN bun install
 
 COPY src ./src/
-RUN bun run build
+RUN echo "PORT = 8080" > .env && bun run build
 
 FROM oven/bun:alpine as RUNNER
 
