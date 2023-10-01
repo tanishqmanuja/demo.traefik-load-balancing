@@ -2,13 +2,10 @@ FROM oven/bun:latest as BUILDER
 
 WORKDIR /app
 
-COPY package.json ./
-COPY bun.lockb ./
-
+COPY package.json bun.lockb ./
 RUN bun install
 
 COPY src ./src/
-
 RUN bun run build
 
 FROM oven/bun:alpine as RUNNER
