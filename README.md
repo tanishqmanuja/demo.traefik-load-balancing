@@ -10,6 +10,14 @@ Before you can use this, ensure you have the following prerequisites installed:
 - [Docker Compose](https://docs.docker.com/compose/) - for managing multi-container applications.
 - A working knowledge of Traefik's configuration concepts.
 
+## Diagram
+
+Here is a simple diagramatic representation of the system:
+
+![Diagram](https://raw.github.com/tanishqmanuja/demo.traefik-load-balancing/main/docs/assets/diagram.png?maxAge=2592000)
+
+> Click [here](https://www.tldraw.com/s/v2_c_Oab-HXbGS9PQj8h7QnQyG?viewport=-1115%2C-683%2C3174%2C1595&page=page%3AypY9S0iHCfrmk4AOIO9ge) to view using tldraw.com
+
 ## Getting Started
 
 Follow these steps to get started:
