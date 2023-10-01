@@ -5,7 +5,7 @@
   "scripts": {
     "start": "bun dist/index.js",
     "dev": "bun --hot src/index.ts",
-    "build": "bun build --target=bun ./src/index.ts --minify  --outfile=dist/index.js"
+    "build": "bun build ./src/index.ts --outfile=dist/index.js --target=bun --minify"
   },
   "devDependencies": {
     "bun-types": "latest"
